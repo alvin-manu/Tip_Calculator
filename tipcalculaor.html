@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .result {
+      margin-top: 20px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+    }
+    label{
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .result_amount{
+        color: green;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h1 class="text-center m-4 text-primary">Tip Calculator</h1>
+                <div class="container p-5 rounded-2 border border-2 border-primary">
+                    <!-- name -->
+                    <label for="amount" class="form-label">Bill Amount</label>
+                    <input type="number" id="amount" class="form-control mb-3" aria-describedby="namecontrol" placeholder="Enter the Bill Amount">
+                    <!-- Percentage Options -->
+                    <div class="form-group">
+                        <label for="tipPercentage">Tip Percentage</label>
+                        <select class="form-control" id="tipPercentage">
+                          <option value="5">5%</option>
+                          <option value="10">10%</option>
+                          <option value="15">15%</option>
+                          <option value="20">20%</option>
+                          <option value="25">25%</option>
+                        </select>
+                      </div>
+
+                    <!-- Button Container -->
+                    <div class="container d-flex justify-content-evenly mt-3">
+                        <!-- Calculate Button -->
+                        <button type="button" id="calculate_btn" class="btn btn-primary" onclick="calculateTip()">Calculate</button>
+                        <!-- Clear Button -->
+                        <button type="button" id="reset_btn" class="btn btn-danger" onclick="clearFields()">Clear</button>
+                    </div>
+
+                    <!-- Result Container -->
+                     <div class="result" id="result"></div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
